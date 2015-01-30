@@ -1,0 +1,110 @@
+Host    bt
+    Hostname    211.147.89.47
+    ForwardAgent    yes
+    User    leo.li
+
+Host    shubei cn11probst00
+    Hostname 106.3.43.83
+    ForwardAgent yes
+    User    leo.li
+    IdentityFile    ~/.ssh/leo.li
+Host    nj js
+    Hostname    180.96.28.20 
+    ForwardAgent    yes
+    KeepAlive   yes
+    User    leo.li
+    IdentityFile    ~/.ssh/leo.li
+
+
+#Host uk
+#   Hostname 91.205.220.60
+#   ProxyCommand =ssh -q shubei nc %h %p
+
+
+
+Host cq
+    Hostname 119.84.41.3
+    Port 9999
+    user leo.li
+
+Host ct00* ct01* ct02* ct03*
+    ProxyCommand=ssh -q cq nc %h %p
+
+Host sh
+    Hostname 61.152.223.35
+    User    leo.li
+    Port 22
+#ProxyCommand=ssh -q shubei nc %h %p
+
+Host cn05*
+    ProxyCommand=ssh -q sh nc %h %p
+
+Host hy
+    Hostname 124.228.32.129
+    Port 22
+
+Host lg
+    Hostname 175.6.4.131
+    User    leo.li
+    Port 22
+Host hnnbo
+    Hostname 175.6.4.132
+    User    leo.li
+    Port 22
+Host  cn07*
+    ProxyCommand=ssh -q lg nc %h %p
+
+Host hw ccap huawei
+    Hostname 117.78.13.99
+    Port 9999
+
+Host    cn10*
+    ProxyCommand=ssh -q hw nc %h %p
+
+Host    cms
+    Hostname uk00procms00
+
+Host    uk 
+    Hostname    bastion1.london.phorm.com
+    Port    22
+Host    zenoss
+    Hostname uk00prozenoss01
+    
+
+HOST    ec2
+    User root
+    Hostname 54.251.45.231
+    IdentityFile ~/.ssh/ec2_user
+
+Host    cn060
+    User phorm
+    Hostname cn060.mon.phorm.com
+    IdentityFile ~/.ssh/id_rsa.dreamplug
+
+Host    cn061
+    User phorm
+    Hostname    cn061.mon.phorm.com
+    IdentityFile ~/.ssh/id_rsa.dreamplug
+Host    ct002
+    User phorm
+    Hostname    ct002.mon.phorm.com
+    IdentityFile ~/.ssh/id_rsa.dreamplug
+
+Host    ct004
+    User phorm
+    Hostname    ct004.mon.phorm.com
+    IdentityFile ~/.ssh/id_rsa.dreamplug
+
+
+Host *
+    ForwardAgent yes
+    ForwardX11 yes
+    User leo.li
+    Port 22
+    IdentityFile ~/.ssh/leo.li
+    ServerAliveInterval 300
+    ConnectTimeout 0
+    GSSAPIAuthentication no
+    KeepAlive yes
+    TCPKeepAlive yes
+
