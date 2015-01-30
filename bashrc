@@ -28,11 +28,3 @@ function fuck(){
 function chon(){
     chkconfig $1 on
 }
-
-history advanced command
-
-export HISTCONTROL=ignorespace
-
-ignorespace  ignore command starts with space
-ignoredups
-ignoreboth  ignore space and duplicate
