@@ -1,4 +1,4 @@
-hopt -s histappend
+shopt -s histappend
 PROMPT_COMMAND='history -a'
 
 alias grep='grep --color=auto -i'
