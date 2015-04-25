@@ -5,6 +5,7 @@ alias grep='grep --color=auto -i'
 alias vi='vim'
 alias ll='ls  --color=auto -haltr'
 alias dstat='dstat -cdlmnpsy --top-io --top-mem --top-cpu --top-bio'
+alias ..='cd ..'
 
 export PATH=$PATH:/sbin:.
 export TMOUT=10000
