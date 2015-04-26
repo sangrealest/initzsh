@@ -6,6 +6,17 @@ alias vi='vim'
 alias ll='ls  --color=auto -haltr'
 alias dstat='dstat -cdlmnpsy --top-io --top-mem --top-cpu --top-bio'
 alias ..='cd ..'
+alias gadd='git add'
+alias gco='git commit -m'
+alias pce='puppet cert'
+alias mpstat='mpstat -P All'
+alias pmem='ps -eo "%C:%p:%z:%a"|sort -k3 -nr|head'
+alias pcpu='ps -eo "%C:%p:%z:%a"|sort -nr|head'
+
+alias yin='sudo yum -y install'
+alias yse='sudo yum search'
+alias ain='sudo apt-get install -y'
+alias ase='sudo apt-cache search'
 
 export PATH=$PATH:/sbin:.
 export TMOUT=10000
