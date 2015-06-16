@@ -18,6 +18,8 @@ alias yse='sudo yum search'
 alias ain='sudo apt-get install -y'
 alias ase='sudo apt-cache search'
 
+alias sls='screen -ls'
+
 export PATH=$PATH:/sbin:.
 export TMOUT=10000
 export HISTCONTROL=ignoreboth
