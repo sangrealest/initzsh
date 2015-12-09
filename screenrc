@@ -1,4 +1,5 @@
 deflogin on
+defshell -bash
 vbell off
 vbell_msg "   Wuff  ----  Wuff!!  "
 termcap  facit|vt100|xterm LP:G0
