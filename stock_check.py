@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/bin/python
 
 import requests
 import time
@@ -40,22 +40,22 @@ def get_stock(stockid):
             continue
         content = s.split('"')
         sre = re.match(r'^var +hq_str_(\w+)=$', content[0].strip())
-        skey = sre.group(1)
+        sid = sre.group(1)
         sval = parse_stock_data(content[1].strip())
-        results.append((skey, sval))
+        results.append((sid, sval))
     return results
 
 def print_stock(stock_data, color=True):
-    for skey, sval in stock_data:
+    for sid, sval in stock_data:
         if sval is None:
-            val_str = skey
+            val_str = sid
             color_code = colors['grey']
         else:
             change = float(sval['now']) - float(sval['close_yesterday'])
-            crate = 100 * change / float(sval['close_yesterday'])
-            val_str = '%s %-8s %7.2f %8.4f%% %-8s %-8s %-8s %-8s %s %s' %(skey,
-                sval['now'], change, crate,
-                sval['open'], sval['close_yesterday'], sval['high'], sval['low'],
+            percent = 100 * change / float(sval['close_yesterday'])
+            val_str = '%s %-8s %7.2f %6.3f%% %-10s %-8s  %-8s %s %s' %(sid,
+                sval['now'], change, percent,
+                sval['open'], sval['high'], sval['low'],
                 sval['time'], sval['name'])
             if change > 0:
                 color_code = colors['red']
@@ -74,10 +74,9 @@ if __name__ == "__main__":
     while True:
         try:
             if len(sys.argv) == 1:
-                sys.exit('No any stock,example stock_check sz002407!')
+                sys.exit('No any stock,example:stock_check sz002407 sh600804 !')
             r = get_stock(sys.argv[1:])
             print_stock(r)
         finally:
             pass
-        time.sleep(5)
-
+        time.sleep(3)
