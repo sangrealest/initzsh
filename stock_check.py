@@ -53,7 +53,7 @@ def print_stock(stock_data, color=True):
         else:
             change = float(sval['now']) - float(sval['close_yesterday'])
             percent = 100 * change / float(sval['close_yesterday'])
-            val_str = '%s %-8s %7.2f %6.3f%% %-10s %-8s  %-8s %s %s' %(sid,
+            val_str = '%s %-8s %7.2f %6.3f%% %-8s %-8s  %-8s %s %s' %(sid,
                 sval['now'], change, percent,
                 sval['open'], sval['high'], sval['low'],
                 sval['time'], sval['name'])
