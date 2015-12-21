@@ -74,10 +74,10 @@ if __name__ == "__main__":
     while True:
         try:
             if len(sys.argv) == 1:
-                sys.exit('No any stock!')
+                sys.exit('No any stock,example stock_check sz002407!')
             r = get_stock(sys.argv[1:])
             print_stock(r)
         finally:
             pass
-        time.sleep(10)
+        time.sleep(5)
 
