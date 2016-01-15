@@ -20,6 +20,7 @@ alias ain='sudo apt-get install -y'
 alias ase='sudo apt-cache search'
 
 alias sls='screen -ls'
+alias sdr='screen -dr'
 
 export PATH=$PATH:/sbin:.
 export TMOUT=10000
