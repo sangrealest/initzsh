@@ -83,7 +83,7 @@ PROMPT="
 ${hg_info}\
 ${git_info} \
 %{$fg[white]%}[%*]
-%{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"
+%{$terminfo[bold]$fg[red]%}# %{$reset_color%}"
 fi
 
 #命令提示符
