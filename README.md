@@ -3,16 +3,5 @@ This is my personal git warehouse.
 
 
 
+download init_zsh.sh and run it, your system will be automatically initialise zsh, autojump and apply a perfect profile.
 
-
-安装oh-my-zsh
-
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-
-安装autojump
-
-git clone git://github.com/joelthelion/autojump.git
-./install.py
-
-git clone https://github.com/sangrealest/shanker
-下载profile文件
