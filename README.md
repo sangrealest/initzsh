@@ -1,3 +1,3 @@
 #Author:shanker
 This is my personal git warehouse.
-Lichunlin
+git clone https://github.com/sangrealest/shanker
