@@ -332,7 +332,7 @@ alias ain='sudo apt-get install -y'
 alias ase='sudo apt-cache search'
 alias sls='screen -ls'
 alias sdr='screen -dr'
-alias mm='getstock sh000001 sz399001 sz399006 sz002407 sz000988 sh6000303 '
+alias mm='getstock sh000001 sz399001 sz399006 sz002407 sz000988 sh600303 '
 
 #[Esc][h] man 当前命令时，显示简短说明
 alias run-help >&/dev/null && unalias run-help
