@@ -1,5 +1,7 @@
 #!/bin/bash
 #Author:Shanker
+#set -x
+#set -u
 
 clear
 echo ""
@@ -11,37 +13,39 @@ echo "#############################################################"
 echo ""
 
 
-if [ `id -u` -ne 0 ]
-then
-    echo "Need root to run is, try with sudo"
-    exit 1
-fi
-
+#if [ `id -u` -ne 0 ]
+#then
+#    echo "Need root to run is, try with sudo"
+#    exit 1
+#fi
 function checkOs(){
     if [ -f /etc/redhat-release ]
     then
-        OS=CentOS
+        OS="CentOS"
     elif [ ! -z "`cat /etc/issue | grep -i bian`" ]
     then
-        OS=Debian
+        OS="Debian"
     elif [ ! -z "`cat /etc/issue | grep -i ubuntu`" ]
     then
-        OS=Ubuntu
+        OS="Ubuntu"
     else
         echo "Not supported OS"
         exit 1
     fi
 } 
 
+function installSoftware(){
 
-if [ "$OS" == "CentOS" ]
+if [ "$OS" == 'CentOS' ]
 then
-    yum -y install zsh git 
+	sudo yum -y install zsh git 
 else
-    apt-get -y install zsh git
+	sudo apt-get -y install zsh git
 fi
+
 zshPath="`which zsh`"
 
+}
 function downloadFile(){
     cd ~
     git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
@@ -51,6 +55,11 @@ function downloadFile(){
 function installAutojump(){
     cd ~/autojump
     ./install.py
+cat >>~/.zshrc<<EOF
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
+EOF
+
 }
 
 function configZsh(){
@@ -58,12 +67,15 @@ function configZsh(){
     then
         mv .zsh_history{.,backup}
     fi
-    chsh -s "$zshPath"
+    sudo chsh -s "$zshPath"
     cp ~/initzsh/zshrc ~/.zshrc
    
 }
+function main(){
+checkOs
+installSoftware
 downloadFile
-installAutojump
 configZsh
- 
-
+installAutojump
+}
+main
