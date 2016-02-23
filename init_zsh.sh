@@ -48,7 +48,7 @@ zshPath="`which zsh`"
 }
 function downloadFile(){
     cd ~
-    git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    git clone https://github.com/robbyrussell/oh-my-zsh.git 
     git clone https://github.com/joelthelion/autojump.git
     git clone https://github.com/sangrealest/initzsh 
 }
