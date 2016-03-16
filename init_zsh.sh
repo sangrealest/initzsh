@@ -18,6 +18,7 @@ echo ""
 #    echo "Need root to run is, try with sudo"
 #    exit 1
 #fi
+
 function checkOs(){
     if [ -f /etc/redhat-release ]
     then
@@ -67,7 +68,7 @@ function configZsh(){
     then
         mv .zsh_history{.,backup}
     fi
-    sudo chsh -s "$zshPath"
+    sudo usermod -s "$zshPath" `whoami`
     cp ~/initzsh/zshrc ~/.zshrc
    
 }
