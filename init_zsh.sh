@@ -70,6 +70,7 @@ function configZsh(){
     fi
     sudo usermod -s "$zshPath" `whoami`
     cp ~/initzsh/zshrc ~/.zshrc
+    cp ~/initzsh/vimrc ~/.vimrc
    
 }
 function main(){
