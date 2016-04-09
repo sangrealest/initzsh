@@ -1,9 +1,9 @@
 export ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="ys"
-plugins=(git autojump history history-substring-search systemadmin systemd )
+plugins=(git autojump history-substring-search systemadmin systemd )
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 source $ZSH/oh-my-zsh.sh
-[[ -s /home/ubuntu/.autojump/etc/profile.d/autojump.sh ]] && source /home/ubuntu/.autojump/etc/profile.d/autojump.sh
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
 
 #color{{{
@@ -75,7 +75,7 @@ ${git_info} \
 if [[ "$USER" == "root" ]]; then
 PROMPT="
 %{$terminfo[bold]$fg[blue]%}#%{$reset_color%} \
-%{$bg[yellow]%}%{$fg[cyan]%}%n%{$reset_color%} \
+%{$bg[red]%}%{$fg[black]%}%n%{$reset_color%} \
 %{$fg[white]%}at \
 %{$fg[green]%}$(box_name) \
 %{$fg[white]%}in \
@@ -143,6 +143,9 @@ if  [ ! -d "$HISTDIR" ] ; then          # create folder if needed
 mkdir -p "$HISTDIR"
 fi
 
+if [ -f ".vimrc" ] ; then
+source .vimrc
+fi
 export HISTFILE="$HISTDIR/zhistory"     # set new history file
 touch $HISTFILE
 local ohistsize=$HISTSIZE
@@ -313,15 +316,17 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
-alias vim='sudo vim'
 alias grep='grep --color=auto -i'
-alias vi='sudo vim'
+alias vi='vim'
 alias ll='ls  --color=auto -hltr'
 alias la='ls --color=auto -alhtr'
 alias dstat='dstat -lpcmdnsy --top-io --top-mem --top-cpu --top-bio'
 alias ..='cd ..'
-alias gadd='git add'
-alias gco='git commit -m'
+alias gad='git add -A'
+alias gco='git commit -m $1'
+alias gpu='git push'
+alias gst='git status'
+alias gpl='git pull'
 alias pce='puppet cert'
 alias mpstat='mpstat -P All'
 alias pmem='ps -eo "%C:%p:%z:%a"|sort -k3 -nr|head'
@@ -332,8 +337,9 @@ alias ain='sudo apt-get install -y'
 alias ase='sudo apt-cache search'
 alias sls='screen -ls'
 alias sdr='screen -dr'
-alias mm='getstock sh000001 sz399001 sz399006 sz002407 sz000988 sh600303 '
+alias mm='getstock sh000001 sz399001 sz399006 sz002407 sz150274 sz150153 sz150193 sz150344 sz150316 sz150172 sz150206 sz150218 sz150212 sz150204 sz150182 sz002466'
 
+alias egrepv='egrep -v "^$|^#"'
 #[Esc][h] man 当前命令时，显示简短说明
 alias run-help >&/dev/null && unalias run-help
 autoload run-help
@@ -423,8 +429,8 @@ setopt extended_glob
      done
  }
 check-cmd-self-insert() { zle .self-insert && recolor-cmd }
- check-cmd-backward-delete-char() { zle .backward-delete-char && recolor-cmd }
+check-cmd-backward-delete-char() { zle .backward-delete-char && recolor-cmd }
  
- zle -N self-insert check-cmd-self-insert
- zle -N backward-delete-char check-cmd-backward-delete-char
+zle -N self-insert check-cmd-self-insert
+zle -N backward-delete-char check-cmd-backward-delete-char
 
