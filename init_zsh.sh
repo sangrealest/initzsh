@@ -56,10 +56,10 @@ function downloadFile(){
 function installAutojump(){
     cd ~/autojump
     ./install.py
-cat >>~/.zshrc<<EOF
-[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
-autoload -U compinit && compinit -u
-EOF
+#cat >>~/.zshrc<<EOF
+#[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
+#autoload -U compinit && compinit -u
+#EOF
 
 }
 
