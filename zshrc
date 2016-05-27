@@ -1,7 +1,7 @@
 export ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="ys"
 plugins=(git autojump history-substring-search systemadmin systemd )
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/sbin:$PATH
 source $ZSH/oh-my-zsh.sh
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
@@ -327,6 +327,7 @@ alias gco='git commit -m $1'
 alias gpu='git push'
 alias gst='git status'
 alias gpl='git pull'
+alias gacp="git add -A && git commit -m 'update' && git push"
 alias pce='puppet cert'
 alias mpstat='mpstat -P All'
 alias pmem='ps -eo "%C:%p:%z:%a"|sort -k3 -nr|head'
@@ -337,7 +338,7 @@ alias ain='sudo apt-get install -y'
 alias ase='sudo apt-cache search'
 alias sls='screen -ls'
 alias sdr='screen -dr'
-alias mm='getstock sh000001 sz399001 sz399006 sz002407 sz150274 sz150153 sz150193 sz150344 sz150316 sz150172 sz150206 sz150218 sz150212 sz150204 sz150182 sz002466'
+alias mm='getstock sh000001 sz399001 sz399006 sz150195 sz150244 sz150218 sz150201 sz150212 sz150332 sz150199 sz150316'
 
 alias egrepv='egrep -v "^$|^#"'
 #[Esc][h] man 当前命令时，显示简短说明
