@@ -18,7 +18,6 @@ echo ""
 #    echo "Need root to run is, try with sudo"
 #    exit 1
 #fi
-
 function checkOs(){
     if [ -f /etc/redhat-release ]
     then
@@ -45,7 +44,7 @@ else
 fi
 
 zshPath="`which zsh`"
-
+user=$(whoami)
 }
 function downloadFile(){
     cd ~
@@ -56,10 +55,10 @@ function downloadFile(){
 function installAutojump(){
     cd ~/autojump
     ./install.py
-#cat >>~/.zshrc<<EOF
-#[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
-#autoload -U compinit && compinit -u
-#EOF
+cat >>~/.zshrc<<EOF
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
+EOF
 
 }
 
@@ -68,16 +67,15 @@ function configZsh(){
     then
         mv .zsh_history{.,backup}
     fi
-    sudo usermod -s "$zshPath" `whoami`
+    sudo usermod -s "$zshPath" $user
     cp ~/initzsh/zshrc ~/.zshrc
-    cp ~/initzsh/vimrc ~/.vimrc
    
 }
 function main(){
- checkOs
- installSoftware
- downloadFile
- configZsh
- installAutojump
+    checkOs
+    installSoftware
+    downloadFile
+    configZsh
+    installAutojump
 }
 main
