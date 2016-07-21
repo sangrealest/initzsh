@@ -1,7 +1,12 @@
+DISABLE_AUTO_UPDATE=true
+
 export ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="ys"
 plugins=(docker git autojump history-substring-search systemadmin systemd )
 export PATH=$HOME/bin:/usr/local/bin:/sbin:$PATH
+export JAVA_HOME=/usr/java/jdk1.8.0_73
+export PATH=$JAVA_HOME/bin:$PATH
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tool.jar
 source $ZSH/oh-my-zsh.sh
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
@@ -312,11 +317,6 @@ bindkey "\e\e" sudo-command-line
 #}}}
  
 #命令别名 {{{
-#For Docker
-alias dockerip="docker inspect --format '{{ .NetworkSettings.IPAddress}}'"
-alias dockerrminotag='docker rmi $(sudo docker images -q --filter "dangling=true")'
-alias dockerrmexit="docker rm $(docker ps -a | grep Exited | awk '{print $1}')"
-
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
@@ -342,8 +342,15 @@ alias ain='sudo apt-get install -y'
 alias ase='sudo apt-cache search'
 alias sls='screen -ls'
 alias sdr='screen -dr'
-alias mm='getstock sh000001 sz399001 sz399006 sh600570 sh600516 sz150195 sz150201 sz150199 sz150218 sz150212 sz150214 sz150206 sz150248 sz150244 sz150332 sz150316 sz002407 '
+alias mm='getstock sh000001 sz399001 sz399006 sz002631 sz002180 sh600570 sz150195 sz150201 sz150199 sz150218 sz150212 sz150214 sz150206 sz150248 sz150244 sz150332 sz150316 sz002407 '
+
 alias egrepv='egrep -v "^$|^#"'
+#tmux alias
+alias ta='tmux attach -t'
+alias ts='tmux new-session -s'
+alias tl='tmux list-sessions'
+alias tksv='tmux kill-server'
+alias tkss='tmux kill-session -t'
 #[Esc][h] man 当前命令时，显示简短说明
 alias run-help >&/dev/null && unalias run-help
 autoload run-help
