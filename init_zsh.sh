@@ -69,6 +69,7 @@ function configZsh(){
     fi
     sudo usermod -s "$zshPath" $user
     cp ~/initzsh/zshrc ~/.zshrc
+    cp ~/initzsh/vimrc ~/.vimrc
    
 }
 function main(){
