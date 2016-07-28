@@ -4,9 +4,10 @@ export ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="ys"
 plugins=(docker git autojump history-substring-search systemadmin systemd )
 export PATH=$HOME/bin:/usr/local/bin:/sbin:$PATH
-export JAVA_HOME=/usr/java/jdk1.8.0_73
-export PATH=$JAVA_HOME/bin:$PATH
-export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tool.jar
+
+#export JAVA_HOME=/usr/java/jdk1.8.0_73
+#export PATH=$JAVA_HOME/bin:$PATH
+#export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tool.jar
 source $ZSH/oh-my-zsh.sh
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
