@@ -456,7 +456,7 @@ alias docker-pid="sudo docker inspect --format '{{.State.Pid}}'"
 alias docker-ip="sudo docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
 
 #the implementation refs from https://github.com/jpetazzo/nsenter/blob/master/docker-enter
-function docker-enter() {
+function denter() {
     #if [ -e $(dirname "$0")/nsenter ]; then
     #Change for centos bash running
     if [ -e $(dirname '$0')/nsenter ]; then
@@ -497,3 +497,40 @@ function docker-enter() {
         fi
     fi
 }
+# ------------------------------------
+# Docker alias and function
+# ------------------------------------
+
+# Get latest container ID
+alias dl="sudo docker ps -l -q"
+
+# Get container process
+alias dps="sudo docker ps"
+
+# Get process included stop container
+alias dpa="sudo docker ps -a"
+
+# Get images
+alias dim="sudo docker images"
+
+#Remove images
+alias drmi="sudo docker rmi -f"
+#remove containers
+#
+alias drm="sudo docker rm -f"
+
+# Get container IP
+alias dip="sudo docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+
+# Run deamonized container, e.g., $dkd base /bin/echo hello
+alias drd="sudo docker run -d"
+
+# Run interactive container, e.g., $dki base /bin/bash
+alias dri="sudo docker run -i -t"
+
+# Execute interactive container, e.g., $dex base /bin/bash
+alias dex="sudo docker exec -i -t"
+dbu() { docker build -t=$1 .; }
+
+# Show all alias related docker
+dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
