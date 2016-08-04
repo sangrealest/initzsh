@@ -4,9 +4,9 @@ export ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="ys"
 plugins=(docker git autojump history-substring-search systemadmin systemd )
 export PATH=$HOME/bin:/usr/local/bin:/sbin:$PATH
-export JAVA_HOME=/usr/java/jdk1.8.0_73
-export PATH=$JAVA_HOME/bin:$PATH
-export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tool.jar
+#export JAVA_HOME=/usr/java/jdk1.8.0_73
+#export PATH=$JAVA_HOME/bin:$PATH
+#export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tool.jar
 source $ZSH/oh-my-zsh.sh
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
@@ -445,8 +445,6 @@ check-cmd-backward-delete-char() { zle .backward-delete-char && recolor-cmd }
 zle -N self-insert check-cmd-self-insert
 zle -N backward-delete-char check-cmd-backward-delete-char
 
-[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
-autoload -U compinit && compinit -u
 
 # Some useful commands to use docker.
 # Author: yeasy@github
@@ -502,35 +500,35 @@ function denter() {
 # ------------------------------------
 
 # Get latest container ID
-alias dl="sudo docker ps -l -q"
+alias dl="docker ps -l -q"
 
 # Get container process
-alias dps="sudo docker ps"
+alias dps="docker ps"
 
 # Get process included stop container
-alias dpa="sudo docker ps -a"
+alias dpa="docker ps -a"
 
 # Get images
-alias dim="sudo docker images"
+alias dim="docker images"
 
 #Remove images
-alias drmi="sudo docker rmi -f"
+alias drmi="docker rmi -f"
 #remove containers
-#
-alias drm="sudo docker rm -f"
-
+alias drm="docker rm -f"
 # Get container IP
-alias dip="sudo docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
 
 # Run deamonized container, e.g., $dkd base /bin/echo hello
-alias drd="sudo docker run -d"
+alias drd="docker run -d"
 
 # Run interactive container, e.g., $dki base /bin/bash
-alias dri="sudo docker run -i -t"
+alias dri="docker run -i -t"
 
 # Execute interactive container, e.g., $dex base /bin/bash
-alias dex="sudo docker exec -i -t"
+alias dex="docker exec -i -t"
 dbu() { docker build -t=$1 .; }
 
 # Show all alias related docker
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
+
+# Bash into running container
