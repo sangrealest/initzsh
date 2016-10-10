@@ -343,7 +343,7 @@ alias ain='sudo apt-get install -y'
 alias ase='sudo apt-cache search'
 alias sls='screen -ls'
 alias sdr='screen -dr'
-alias mm='getstock sh000001 sz399001 sz399006 sz002631 sz002180 sh600570 sz150195 sz150201 sz150199 sz150218 sz150212 sz150214 sz150206 sz150248 sz150244 sz150332 sz150316 sz002407 '
+alias mm='getstock sh000001 sz399001 sz399006 sz000627 sh600749 sz300066 sh600993 sz300309 sz002204 sh600713 sz000572 sz002407 '
 
 alias egrepv='egrep -v "^$|^#"'
 #tmux alias
@@ -533,12 +533,12 @@ dbu() { docker build -t=$1 .; }
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
 
 # Bash into running container
-#alias ping='nali-ping'
-#alias dig='nali-dig'
-#alias nslookup='nali-nslookup'
-#alias traceroute='nali-traceroute'
-#alias tracepath-'nali-tracepath'
-#alias mtr='function _mtr(){ mtr $@ | nali; }; _mtr'
+alias ping='nali-ping'
+alias dig='nali-dig'
+alias nslookup='nali-nslookup'
+alias traceroute='nali-traceroute'
+alias tracepath-'nali-tracepath'
+alias mtr='function _mtr(){ mtr $@ | nali; }; _mtr'
 
 
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
