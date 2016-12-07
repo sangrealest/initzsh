@@ -534,13 +534,10 @@ dbu() { docker build -t=$1 .; }
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
 
 # Bash into running container
-alias ping='nali-ping'
-alias dig='nali-dig'
-alias nslookup='nali-nslookup'
-alias traceroute='nali-traceroute'
-alias tracepath-'nali-tracepath'
-alias mtr='function _mtr(){ mtr $@ | nali; }; _mtr'
+#alias ping='nali-ping'
+#alias dig='nali-dig'
+#alias nslookup='nali-nslookup'
+#alias traceroute='nali-traceroute'
+#alias tracepath-'nali-tracepath'
+#alias mtr='function _mtr(){ mtr $@ | nali; }; _mtr'
 
-
-[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
-autoload -U compinit && compinit -u
