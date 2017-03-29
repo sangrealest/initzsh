@@ -18,6 +18,7 @@ echo ""
 #    echo "Need root to run is, try with sudo"
 #    exit 1
 #fi
+
 function checkOs(){
     if [ -f /etc/redhat-release ]
     then
