@@ -317,10 +317,11 @@ bindkey "\e\e" sudo-command-line
 #}}}
  
 #命令别名 {{{
-alias apl='ansible-playbook'
+alias ap='ansible-playbook'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
+alias df='df -Th'
 
 alias grep='grep --color=auto -i'
 alias vi='vim'
@@ -339,6 +340,8 @@ alias pmem='ps -eo "%C:%p:%z:%a"|sort -k3 -nr|head'
 alias pcpu='ps -eo "%C:%p:%z:%a"|sort -nr|head'
 alias yin='sudo yum -y install'
 alias yse='sudo yum search'
+alias din='sudo dnf -y install'
+alias dse='sudo dnf search'
 alias ain='sudo apt-get install -y'
 alias ase='sudo apt-cache search'
 alias sls='screen -ls'
