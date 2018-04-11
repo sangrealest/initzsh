@@ -108,9 +108,9 @@ esac
 #编辑器
 export EDITOR=vim
 #输入法
-export XMODIFIERS="@im=ibus"
-export QT_MODULE=ibus
-export GTK_MODULE=ibus
+export XMODIFIERS="@im=fcitx"
+export QT_MODULE=fcitx
+export GTK_MODULE=fcitx
 #关于历史纪录的配置 {{{
 #历史纪录条目数量
 export HISTSIZE=10000
