@@ -39,9 +39,9 @@ function installSoftware(){
 
 if [ "$OS" == 'CentOS' ]
 then
-	sudo yum -y install zsh git 
+	sudo yum -y install zsh git vim
 else
-	sudo apt-get -y install zsh git
+	sudo apt-get -y install zsh git vim
 fi
 
 zshPath="`which zsh`"
