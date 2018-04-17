@@ -47,15 +47,17 @@ fi
 zshPath="`which zsh`"
 user=$(whoami)
 }
+
 function downloadFile(){
     cd ~
     git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
     git clone https://github.com/joelthelion/autojump.git
     git clone https://github.com/sangrealest/initzsh 
 }
+
 function installAutojump(){
     cd ~/autojump
-    ./install.py
+    python install.py
 
 #cat >>~/.zshrc<<EOF
 #[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
@@ -65,9 +67,9 @@ function installAutojump(){
 }
 
 function configZsh(){
-    if [ -f ".zsh_history" ]
+    if [ -f "~/.zsh_history" ]
     then
-        mv .zsh_history{.,backup}
+        mv ~/.zsh_history{.,backup}
     fi
     sudo usermod -s "$zshPath" $user
     cp ~/initzsh/zshrc ~/.zshrc
