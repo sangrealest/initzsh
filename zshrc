@@ -2,7 +2,7 @@ DISABLE_AUTO_UPDATE=true
 
 export ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="ys"
-plugins=(docker git autojump history-substring-search systemadmin systemd )
+plugins=(docker git autojump history-substring-search systemadmin systemd zsh-autosuggestions)
 export PATH=$HOME/bin:/usr/local/bin:/sbin:$PATH
 #export JAVA_HOME=/usr/java/jdk1.8.0_73
 #export PATH=$JAVA_HOME/bin:$PATH
@@ -318,6 +318,7 @@ bindkey "\e\e" sudo-command-line
  
 #命令别名 {{{
 alias ap='ansible-playbook'
+alias ad='ansible-doc'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'

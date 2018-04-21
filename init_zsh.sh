@@ -52,6 +52,7 @@ function downloadFile(){
     cd ~
     git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
     git clone https://github.com/joelthelion/autojump.git
+    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions
     git clone https://github.com/sangrealest/initzsh 
 }
 
