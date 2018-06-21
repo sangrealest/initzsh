@@ -317,12 +317,15 @@ bindkey "\e\e" sudo-command-line
 #}}}
  
 #命令别名 {{{
-alias ap='ansible-playbook'
-alias ad='ansible-doc'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 alias df='df -Th'
+alias ap='ansible-playbook'
+alias ad='ansible-doc'
+alias chshanker='chown -R shanker: *'
+alias rgrep='rpm -qa | grep $1'
+
 
 alias grep='grep --color=auto -i'
 alias vi='vim'
