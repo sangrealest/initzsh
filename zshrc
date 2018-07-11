@@ -322,7 +322,7 @@ alias mv='mv -i'
 alias rm='rm -i'
 alias df='df -Th'
 alias ap='ansible-playbook'
-alias ad='ansible-doc'
+alias adoc='ansible-doc'
 alias chshanker='chown -R shanker: *'
 alias rgrep='rpm -qa | grep $1'
 
