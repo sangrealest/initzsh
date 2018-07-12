@@ -75,6 +75,7 @@ function configZsh(){
     sudo usermod -s "$zshPath" $user
     cp ~/initzsh/zshrc ~/.zshrc
     cp ~/initzsh/vimrc ~/.vimrc
+    cp ~/initzsh/tmux.conf ~/.tmux.conf
     chmod -R 755 ~/.oh-my-zsh/custom/plugins
    
 }
