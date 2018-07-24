@@ -2,7 +2,7 @@ DISABLE_AUTO_UPDATE=true
 
 export ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="ys"
-plugins=(docker git autojump history-substring-search systemadmin systemd zsh-autosuggestions)
+plugins=(docker git autojump history-substring-search systemadmin systemd zsh-autosuggestions kubectl)
 export PATH=$HOME/bin:/usr/local/bin:/sbin:$PATH
 #export JAVA_HOME=/usr/java/jdk1.8.0_73
 #export PATH=$JAVA_HOME/bin:$PATH
