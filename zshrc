@@ -325,6 +325,7 @@ alias ap='ansible-playbook'
 alias adoc='ansible-doc'
 alias chshanker='chown -R shanker: *'
 alias rgrep='rpm -qa | grep $1'
+alias sar='LANG=C sar'
 
 
 alias grep='grep --color=auto -i'
