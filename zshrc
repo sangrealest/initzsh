@@ -4,6 +4,10 @@ export ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="ys"
 plugins=(docker git autojump history-substring-search systemadmin systemd zsh-autosuggestions kubectl)
 export PATH=$HOME/bin:/usr/local/bin:/sbin:$PATH
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 #export JAVA_HOME=/usr/java/jdk1.8.0_73
 #export PATH=$JAVA_HOME/bin:$PATH
 #export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tool.jar
