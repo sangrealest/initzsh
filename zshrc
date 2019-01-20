@@ -1,10 +1,15 @@
 DISABLE_AUTO_UPDATE=true
 
 export ZSH=$HOME/.oh-my-zsh
+<<<<<<< HEAD
+ZSH_THEME="pygmalion"
+plugins=(docker git autojump history-substring-search systemadmin systemd zsh-autosuggestions kubectl)
+export PATH=$HOME/bin:/usr/local/bin:/sbin:$HOME/.local/bin:$PATH
 #ZSH_THEME="pygmalion"
 ZSH_THEME="agnoster"
 plugins=(docker git autojump history-substring-search systemadmin systemd zsh-autosuggestions )
 export PATH=$HOME/bin:/usr/local/bin:/sbin:$PATH
+>>>>>>> c8aaf2796a9c8e6c889a006380572676e2789cec
 export TERM="xterm-256color"
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
