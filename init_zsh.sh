@@ -39,9 +39,9 @@ function installSoftware(){
 
 if [ "$OS" == 'CentOS' ]
 then
-	sudo yum -y -q install zsh git vim
+	sudo yum -y -q install zsh git vim tmux
 else
-	sudo apt-get -y install zsh git vim
+	sudo apt-get -y install zsh git vim tmux
 fi
 
 zshPath="`which zsh`"
@@ -115,6 +115,14 @@ function configVim(){
     fi
 }
 
+function configTmux(){
+    if [ -f "~/.tmux.conf" ]
+    then
+        echo "Backing up your ~/.tmux.conf file now"
+        mv ~/.tmux.conf ~/.tmux.conf.backup.`date +%F`
+        cp ~/initzsh/tmux.conf ~/.tmux.conf
+    fi
+}
 function main(){
     checkOs
     installSoftware
@@ -122,6 +130,7 @@ function main(){
     configZsh
     configGitconfig
     configVim
+    configTmux
     installAutojump
 }
 main
