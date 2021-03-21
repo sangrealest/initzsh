@@ -1,0 +1,34 @@
+[H[2J[3J
+#############################################################
+# Automatically to  Install oh-my-zsh and initialize it     #
+# Intro: https://github.com/sangrealest/shanker             #
+# Author: Shanker<shanker@yeah.net>                         #
+#############################################################
+
+Installing autojump to /home/shanker/.autojump ...
+creating directory: /home/shanker/.autojump/bin
+creating directory: /home/shanker/.autojump/share/man/man1
+creating directory: /home/shanker/.autojump/etc/profile.d
+creating directory: /home/shanker/.autojump/share/autojump
+copying file: ./bin/autojump -> /home/shanker/.autojump/bin
+copying file: ./bin/autojump_argparse.py -> /home/shanker/.autojump/bin
+copying file: ./bin/autojump_data.py -> /home/shanker/.autojump/bin
+copying file: ./bin/autojump_match.py -> /home/shanker/.autojump/bin
+copying file: ./bin/autojump_utils.py -> /home/shanker/.autojump/bin
+copying file: ./bin/icon.png -> /home/shanker/.autojump/share/autojump
+copying file: ./docs/autojump.1 -> /home/shanker/.autojump/share/man/man1
+creating directory: /home/shanker/.autojump/etc/profile.d
+creating directory: /home/shanker/.autojump/share/autojump
+creating directory: /home/shanker/.autojump/functions
+copying file: ./bin/autojump.sh -> /home/shanker/.autojump/etc/profile.d
+copying file: ./bin/autojump.bash -> /home/shanker/.autojump/share/autojump
+copying file: ./bin/autojump.fish -> /home/shanker/.autojump/share/autojump
+copying file: ./bin/autojump.zsh -> /home/shanker/.autojump/share/autojump
+copying file: ./bin/_j -> /home/shanker/.autojump/functions
+
+Please manually add the following line(s) to ~/.bashrc:
+
+	[[ -s /home/shanker/.autojump/etc/profile.d/autojump.sh ]] && source /home/shanker/.autojump/etc/profile.d/autojump.sh
+
+Please restart terminal(s) before running autojump.
+

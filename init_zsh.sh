@@ -113,6 +113,7 @@ function configVim(){
         mv ~/.vimrc ~/.vimrc.backup.`date +%F`
         cp ~/initzsh/vimrc ~/.vimrc
     fi
+    cp ~/initzsh/vimrc ~/.vimrc
 }
 
 function configTmux(){
@@ -122,6 +123,7 @@ function configTmux(){
         mv ~/.tmux.conf ~/.tmux.conf.backup.`date +%F`
         cp ~/initzsh/tmux.conf ~/.tmux.conf
     fi
+    cp ~/initzsh/tmux.conf ~/.tmux.conf
 }
 function main(){
     checkOs
